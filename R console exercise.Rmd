@@ -1,0 +1,239 @@
+---
+title: "Untitled"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r}
+1+100
+
+#sin(1)
+
+#x<-sin(1)
+#x
+#y==10
+#x==10
+#x
+myVector <- 1:10
+myVector
+
+
+```
+
+
+```{r eval=FALSE}
+install.packages("ggplot2")
+```
+
+```{r}
+mass <- 47.5
+age <- 122
+mass
+mass <- mass * 2.3
+mass
+age <- age-20
+age
+age < mass
+```
+
+```{r eval=FALSE}
+##install.packages(plyr)
+install.packages("gapminder")
+
+```
+
+```{r}
+cat_file <- "https://raw.githubusercontent.com/COMBINE-Australia/RNAseq-R/gh-pages/data/feline-data.csv"
+download.file(cat_file, destfile="feline-data.csv")
+cats <- read.csv("feline-data.csv")
+
+read.csv("feline-data.csv")
+
+
+```
+
+```{r }
+##install.packages(plyr)
+
+```
+
+```{r}
+getwd(
+  
+)
+```
+
+```{r}
+file.exists("feline-data.csv")
+
+```
+
+```{r}
+tmp <- read.delim("feline-data.csv")
+tmp
+```
+
+```{r}
+cats
+```
+
+```{r}
+cats$coat
+
+```
+
+```r eval=FALSE}
+##cats
+```
+```{r}
+##cats$weight
+```
+```{r}
+My-sum <- function(a,b) {sum1 <- a + b
+return (sum1)}
+``{r}
+My_sum <- function(a,b) {sum1 <- a + b
+return (sum1)}
+``{r}
+
+
+```
+
+```{r}
+fahr_to_kelvin <- function(temp) {
+  kelvin <- ((temp - 32) * (5 / 9)) + 273.15
+  return(kelvin)
+}
+
+fahr_to_kelvin(212)
+```
+
+```{r}
+kelvin_celcius <- function (temp){celcius <- ((temp-273))
+return(celcius)}
+kelvin_celcius(400)
+
+```
+
+```{r}
+fahr_kelvin_celcius <- function (temp) {celcius <- (((temp - 32) * (5/9) + 273.15 ) - 273.15)
+return(celcius)}
+fahr_kelvin_celcius(212)
+
+```
+```{r}
+fahr_to_kelvin <- function(temp){
+if (!is.numeric (temp)) {stop("Temp has to be numeric value!!!")}
+
+kelvin <- ((temp -32)*(5/9) + 273.15)
+return(kelvin)
+}
+fahr_to_kelvin(99)
+```
+```{r}
+fahr_to_kelvin <- function(temp){
+if (!is.numeric (temp)) {stop("Temp has to be numeric value!!!")}
+
+kelvin <- ((temp -32)*(5/9) + 273.15)
+return(kelvin)
+}
+fahr_to_kelvin(99)
+```{r}
+fahr_to_kelvin <- function(temp){
+if (!is.numeric (temp)) {stop("Temp has to be numeric value!!!")}
+
+kelvin <- ((temp -32)*(5/9) + 273.15)
+return(kelvin)
+}
+fahr_to_kelvin(99)
+```
+
+```{r}
+gapminder_file <- "https://raw.githubusercontent.com/COMBINE-Australia/RNAseq-R/gh-pages/data/gapminder-FiveYearData.csv"
+download.file(gapminder_file, destfile="gapminder-FiveYearData.csv")
+gapminder <- read.csv("gapminder-FiveYearData.csv")
+
+```
+
+```{r}
+?head
+```
+
+```{r}
+head(gapminder, n = 6)
+```
+
+```{r}
+dim(gapminder)
+```
+
+```{r}
+calcGDP <- function(dat){gdp<-dat$pop*dat$gdpPercap
+return(gdp)}
+
+calcGDP(head(gapminder))
+```
+
+```{r}
+calcGDP <- function(dat, year=NULL, country=NULL) {
+  if(!is.null(year)) {
+    dat <- dat[dat$year %in% year, ]
+  }
+  if (!is.null(country)) {
+    dat <- dat[dat$country %in% country,]
+  }
+  gdp <- dat$pop * dat$gdpPercap
+  
+  new <- cbind(dat, gdp=gdp)
+  return(new)
+}
+
+calcGDP(head (gapminder),country = "Afghanistan", year = 1952)
+
+```
+
+```{r}
+ge
+
+  
+```
+
+
+`
+```
+```{r}
+fahr_to_kelvin2 <- function(temp){
+stopifnot (is.numeric (temp))
+
+kelvin <- ((temp -32)*(5/9) + 273.15)
+return(kelvin)
+}
+fahr_to_kelvin2(99)
+
+```
+
+```{r}
+newfunct <- function(a,b,c) { answer <-((a+b)/c) 
+return (answer)}
+newfunct(7,8,4)
+
+```
+
+My_sum(7,8)
+
+```
+
+My-sum(7,8)
+
+```
+
+
